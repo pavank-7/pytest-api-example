@@ -4,12 +4,6 @@ import schemas
 import api_helpers
 from hamcrest import assert_that, equal_to, has_item, has_key
 '''
-TODO: Finish this test by...
-1) Troubleshooting and fixing the test failure
-   The purpose of this test is to validate the response matches
-   the expected schema defined in schemas.py
-FIX: schemas.py had "name" typed as "integer" — it must be "string".
-     Once schemas.py is corrected this test passes.
 '''
 def test_pet_schema():
     test_endpoint = "/pets/1"
@@ -45,9 +39,7 @@ def test_find_by_status_200(status):
     for pet in pets:
         validate(instance=pet, schema=schemas.pet)
 '''
-TODO: Finish this test by...
-1) Testing and validating the appropriate 404 response for /pets/{pet_id}
-2) Parameterizing the test for any edge cases
+
 '''
 @pytest.mark.parametrize("pet_id", [
     (9999),          # non-existent positive ID
@@ -57,5 +49,5 @@ TODO: Finish this test by...
 def test_get_by_id_404(pet_id):
     test_endpoint = f"/pets/{pet_id}"
     response = api_helpers.get_api_data(test_endpoint)
-    # 1) Validate the 404 response
+    # 1) Validate the 404 response vvv
     assert response.status_code == 404

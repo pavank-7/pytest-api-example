@@ -8,7 +8,7 @@ from hamcrest import assert_that, equal_to
 
 @pytest.fixture
 def create_order():
-    """Fixture: create a fresh pet and place an order so each test run is unique."""
+   
     # Step 1: Create a new pet with a unique random ID
     unique_id = random.randint(10000, 99999)
     new_pet = {
